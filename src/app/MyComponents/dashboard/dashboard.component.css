@@ -1,0 +1,19 @@
+        table {
+            border-collapse: collapse;
+            width: 100%;        
+        }
+
+        td,
+        th {
+            border: 2px solid;
+            text-align: center;
+        }
+
+        button {
+            text-align: center;
+            margin: auto;
+            display: flex;
+            display: grid;
+            
+        }
+    
