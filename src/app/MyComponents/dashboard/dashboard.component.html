@@ -1,5 +1,5 @@
-    <button routerLink="add" style="margin-bottom: 15px;" mat-raised-button color="primary">Add Todo</button>
-    <table style="background-color: rgb(148, 219, 242);" mat-table [dataSource]="data" class="mat-elevation-z8">
+    <button routerLink="add" class="btn" mat-raised-button color="primary">Add Todo</button>
+    <table  mat-table [dataSource]="data" class="mat-elevation-z8">
       <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef> Title </th>
         <td mat-cell *matCellDef="let element"> {{element.title}} </td>

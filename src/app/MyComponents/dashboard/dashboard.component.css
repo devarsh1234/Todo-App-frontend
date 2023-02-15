@@ -16,4 +16,13 @@
             display: grid;
             
         }
+
+        .mat-elevation-z8{
+            background-color:  rgb(148, 219, 242);
+
+        }
+        
+        .btn{
+            margin-bottom: 15px;
+        }
     

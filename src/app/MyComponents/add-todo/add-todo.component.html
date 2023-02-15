@@ -6,7 +6,7 @@
           <mat-form-field appearance="outline">
             <mat-label>Title</mat-label>
             <input matInput placeholder="Enter Title" formControlName="title">
-            <span *ngIf="addForm.controls.title.invalid && addForm.controls.title.touched" style="color:red">*required
+            <span class="invalid-message" *ngIf="addForm.controls.title.invalid && addForm.controls.title.touched" >*required
               field</span>
           </mat-form-field>
         </p>
@@ -14,19 +14,19 @@
           <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
             <input matInput placeholder="Enter Description" formControlName="description">
-            <span *ngIf="addForm.controls.description.invalid && addForm.controls.description.touched"
-              style="color:red">*required field</span>
+            <span class="invalid-message" *ngIf="addForm.controls.description.invalid && addForm.controls.description.touched"
+              >*required field</span>
           </mat-form-field>
         </p>
         <mat-form-field appearance="fill">
           <mat-label>Enter a date range</mat-label>
           <mat-date-range-input [formGroup]="addForm" [rangePicker]="picker" min="{{getDate(date)}}">
             <input matStartDate formControlName="startdate" placeholder="Start date">
-            <span *ngIf="addForm.controls.startdate.invalid && addForm.controls.startdate.touched"
-              style="color:red">*required field</span>
+            <span class="invalid-message" *ngIf="addForm.controls.startdate.invalid && addForm.controls.startdate.touched"
+              >*required field</span>
             <input matEndDate formControlName="enddate" placeholder="End date">
-            <span *ngIf="addForm.controls.enddate.invalid && addForm.controls.enddate.touched"
-              style="color:red">*required field</span>
+            <span class="invalid-message" *ngIf="addForm.controls.enddate.invalid && addForm.controls.enddate.touched"
+              >*required field</span>
           </mat-date-range-input>
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-date-range-picker #picker></mat-date-range-picker>
@@ -47,7 +47,7 @@
           <button *ngIf="!update" (click)="addTodo(addForm.value)" class="btn btn-primary">Add Todo</button>
           <button *ngIf="update" routerLink="" (click)="updateTodo(addForm.value)" [disabled]="addForm.invalid"
             class="btn btn-primary">Update Todo</button>
-          <button routerLink="" style="margin: 10px;" class="btn btn-primary">Cancel</button>
+          <button class="btn-primary" routerLink=""  class="btn btn-primary">Cancel</button>
         </div>
       </form>
     </div>
