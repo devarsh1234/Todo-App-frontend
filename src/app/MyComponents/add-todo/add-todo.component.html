@@ -6,36 +6,32 @@
           <mat-form-field appearance="outline">
             <mat-label>Title</mat-label>
             <input matInput placeholder="Enter Title" formControlName="title">
-            <span class="invalid-message" *ngIf="addForm.controls.title.invalid && addForm.controls.title.touched" >*required
-              field</span>
+              <mat-error class="invalid-message" *ngIf="addForm.get('title')?.hasError('required')">*required field</mat-error>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
             <input matInput placeholder="Enter Description" formControlName="description">
-            <span class="invalid-message" *ngIf="addForm.controls.description.invalid && addForm.controls.description.touched"
-              >*required field</span>
+            <mat-error class="invalid-message" *ngIf="addForm.get('description')?.hasError('required')">*required field</mat-error>
           </mat-form-field>
         </p>
         <mat-form-field appearance="fill">
           <mat-label>Enter a date range</mat-label>
           <mat-date-range-input [formGroup]="addForm" [rangePicker]="picker" min="{{getDate(date)}}">
             <input matStartDate formControlName="startdate" placeholder="Start date">
-            <span class="invalid-message" *ngIf="addForm.controls.startdate.invalid && addForm.controls.startdate.touched"
-              >*required field</span>
+            <mat-error class="invalid-message" *ngIf="addForm.get('startdate')?.hasError('required')">*required field</mat-error>
             <input matEndDate formControlName="enddate" placeholder="End date">
-            <span class="invalid-message" *ngIf="addForm.controls.enddate.invalid && addForm.controls.enddate.touched"
-              >*required field</span>
+            <mat-error class="invalid-message" *ngIf="addForm.get('enddate')?.hasError('required')">*required field</mat-error>
           </mat-date-range-input>
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-date-range-picker #picker></mat-date-range-picker>
         </mat-form-field>
-
         <div>
           <mat-form-field appearance="fill">
             <mat-label>Status</mat-label>
             <mat-select formControlName="status" required>
+              <mat-error class="invalid-message" *ngIf="addForm.get('status')?.hasError('required')">*required field</mat-error>
               <mat-option>--</mat-option>
               <mat-option *ngFor="let value of input" [value]="value.id">
                 {{value.name}}
